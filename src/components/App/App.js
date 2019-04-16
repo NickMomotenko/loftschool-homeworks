@@ -1,3 +1,14 @@
-import React from 'react'
+import React, {Component} from 'react'
+import Form from "./../Form"
 
-export default () => <p>Homework app</p>
+class App extends Component{
+    render(){
+        return (
+            <div className="app-container">
+                <Form />
+            </div>
+        )
+    }
+}
+
+export default App;
