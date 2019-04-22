@@ -4,15 +4,55 @@ import './Layout.css';
 
 class Layout extends PureComponent {
   render() {
-    return 'empty';
+    const { header, footer, children } = this.props;
+
+    const className = [];
+
+    if(header && footer){
+      className.push('main--with-footer', 'main--with-header' )
+    }else if (header){
+      className.push('main--with-header' )
+    }else if (footer){
+      className.push('main--with-footer' )
+    }else(
+      console.log('no header no footer')
+    )
+
+    return(
+      <Fragment>
+        { this.renderHeader( header ) }
+        <main className={ `main ${className.join(' ')}` }>
+          <SectionTitle
+              children={'main'}
+              className={'main__title'}
+          />
+          { children }
+        </main>
+        { this.renderFooter( footer ) }
+      </Fragment>
+    )
   }
 
   renderHeader(HeaderChild) {
-    return 'empty';
+    return (
+      <HeaderChild
+        sectionTitle={ <SectionTitle
+            children={ this.props.header.name }
+            className={ `${this.props.header.name.toLowerCase()}__title` }
+        /> }
+      />
+    )
   }
 
   renderFooter(FooterChild) {
-    return 'empty';
+    return (
+      <FooterChild
+        sectionTitle={ <SectionTitle
+            children={ this.props.footer.name }
+            className={ `${this.props.footer.name.toLowerCase()}__title` }
+        /> }
+      />
+    )
   }
 }
 

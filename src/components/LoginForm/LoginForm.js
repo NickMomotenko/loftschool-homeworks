@@ -46,7 +46,6 @@ class LoginForm extends PureComponent {
     return (
       <div className="login-form">
         <h1 className="login-form-title">Авторизация</h1>
-
         {fields.map(({ id, label, type }) => (
           <p key={id} className="field">
             <label className="field__label" htmlFor={id}>
@@ -62,11 +61,9 @@ class LoginForm extends PureComponent {
             />
           </p>
         ))}
-
         {authorizeError !== '' && (
           <p className="login-form-error t-login-error">{authorizeError}</p>
         )}
-
         <div className="login-form__buttons">
           <Button onClick={this.handleSubmit} className="t-login">
             Войти

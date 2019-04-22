@@ -4,7 +4,7 @@ import Footer from '../Footer';
 import Header from '../Header';
 import LoginForm from '../LoginForm';
 import Congratulations from '../Congratulations';
-import { AuthProvider, AuthConsumer } from '../../contexts/Auth';
+import { AuthProvider, AuthConsumer } from '../../contexts/Auth/Auth';
 
 class App extends PureComponent {
   render() {
